@@ -1,0 +1,411 @@
+<?php
+/**
+* Template Name: Front Page
+*/
+get_header(); ?>
+
+
+
+<div class="slider-wrap cont_above">
+	<div class="image-slider">
+		<?php
+                $args = array( 
+                    'post_type' => 'main-slider',
+                    'posts_per_page' => 6,
+                    'order'=>'ASC'
+                );
+            $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+		<div class="img-wrap" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');">
+			<div class="container">
+				<div class="banner_content">
+					<div class="row centered_items_verti">
+						<div class="col-md-6 col-sm-12 relative-block">
+							<div class="banner_left_side">
+								<div class="banner_play_btn">
+									<div class="pulsating-circle"></div>
+									<div class="play_btn"><i class="fa fa-play"></i> <span class="btn_title">Play Promo</span></div>
+
+								</div>
+								<div class="banner_about_content">
+									<h4 class="title">Ultramarine tech</h4>
+									<p class="desc"><?php the_content();?></p>
+								</div>
+							</div>
+						</div>
+						<!-- data-aos="fade-down" data-aos-duration="2000" -->
+						<div class="col-md-6 col-sm-12">
+							<div class="banner_right_side">
+								<div class="row">
+									<div class="col-md-8 col-sm-8">
+										<p class="banner_desc"><?php the_field('banner_sub_title'); ?></p>
+									</div>
+									<div class="col-md-4 col-sm-4">
+										<div class="banenr_info_box">
+											<p class="desc"><?php the_field('banner_tags'); ?></p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12 col-sm-12">
+										<div class="banner_title">
+											<?php the_title();?>
+										</div>
+										<h1> Are you
+	<span id="#changeWord"></span> 
+	<span>|</span>
+</h1>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php endwhile; ?>		
+	</div>
+	<div class="slider-progress">
+		<span></span>
+	</div>
+</div>
+
+
+<section class="big_circle_sec bg-silver cont_above">
+	<div class="container">
+		<div class="row centered_items_verti">
+		<div class="col-md-7 col-sm-12">
+			<div class="custom-heigt_sec" style="background-image: url('<?php bloginfo('template_directory')?>/images/banner-img.png');"></div>
+		</div>
+		<div class="col-md-5 col-sm-12">
+			<div class="circle_Contnet">
+				<i class="fa fa-play"></i>
+				<!-- <?php if( get_field('big_circle_title') ): ?>
+    <h2><?php the_field('big_circle_title'); ?></h2>
+<?php endif; ?>
+				<h3 class="title"><?php get_field('big_circle_title'); ?></h3>
+				<p class="desc"><?php the_field('big_circle_description'); ?></p>
+				<a href="#" class="btn btn-primary">Get started</a> -->
+				<h3 class="title">Industrial <br>Wastewater <br> Treatment<br> Plants </h3>
+				<p class="desc">With advance treatment technology and the passionate people behind.</p>
+				<a href="#" class="btn btn-primary">Get started</a>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+
+
+
+<!-- <section class="services_sec sec-padding --large cont_above bg-white">
+	<div class="container">
+		<div class="row centered_items_verti">
+			<div class="col-md-6 col-sm-12">
+				<div class="img_slider">
+					<img src="<?php bloginfo('template_directory')?>/images/img1.jpg">
+					<img src="<?php bloginfo('template_directory')?>/images/img1.jpg">
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<p class="main_sub_title tt-uppercase fc-black">Our Services</p>
+				<h3 class="main_title">Full-Service <br clear="hidden-md-down">architecture and<br clear="hidden-md-down"> urban design office.</h3>
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="column_content">
+							<ul class="unstyled">
+								<li class="desc">Architectural Design & Planning</li>
+								<li class="desc">Visual Facility Design</li>
+								<li class="desc">Audio Facility Design</li>
+								<li class="desc">Construction</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-sm-12">
+						<div class="column_content">
+							<ul class="unstyled">
+								<li class="desc">Art Direction</li>
+								<li class="desc">Brand Identities</li>
+								<li class="desc">Campaigns</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->
+
+<section class="studio_sec cont_above bg-white sec-padding" style="background-image: url('<?php bloginfo('template_directory')?>/images/shortimg.jpg');">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 col-sm-12">
+				<div class="banner_play_btn">
+					<div class="pulsating-circle"></div>
+					<div class="play_btn"><i class="fa fa-play"></i> <span class="btn_title">Play Promo</span></div>
+
+				</div>
+				<h2 class="main_title mbpx-15">Studio that gets excited about.</h2>
+				<div class="accordion_container">
+		<div class="accordion_head"><span class="plusminus">+</span> Architectural Design & Planning</div>
+			<div class="accordion_body" style="display: none;">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+		<div class="accordion_head"><span class="plusminus">+</span> Visual Facility Design</div>
+			<div class="accordion_body" style="display: none;">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+		<div class="accordion_head"><span class="plusminus">+</span> Audio Facility Design</div>
+			<div class="accordion_body" style="display: none;">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>
+				</div>
+			</div>
+			<div class="col-md-7 col-sm-12">
+				<div class="row wrap_counter_boxes">
+					<div class="col-md-1 hidden-md-down"></div>
+					<div class="col-md-5 col-sm-6">
+						<div class="counter_box">
+							<h3 class="title">28+</h3>
+							<p class="desc">designers and developers</p>
+						</div>
+					</div>
+
+					<div class="col-md-5 col-sm-6">
+						<div class="counter_box">
+							<h3 class="title">36+</h3>
+							<p class="desc">awards for digital innovation</p>
+						</div>
+					</div>
+					<div class="col-md-1 hidden-md-down"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- <section class="clients_sec cont_above sec-padding bg-silver">
+	<div class="container">
+		<div class="row centered_items_verti">
+			<div class="col-md-5 col-sm-12">
+				<p class="sub_title">Awards & honors</p>
+				<h2 class="main_title">The awards <br class="hidden-md-down">won 
+by our <br class="hidden-md-down">project.</h2>
+			</div>
+			<div class="col-md-1 hidden-md-down"></div>
+			<div class="col-md-6 col-sm-12">
+				<p class="desc mbpx-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<div class="row">
+					<?php
+                $args = array( 
+                    'post_type' => 'clients',
+                    'posts_per_page' => 6,
+                    'order'=>'ASC'
+                );
+            $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<div class="col-md-4 col-sm-6 col-6">
+						<div class="client_box">
+							<img src="<?php the_post_thumbnail_url('full'); ?>">
+							<p class="award_desc"><?php the_title(); ?></p>
+						</div>
+					</div>
+					 <?php endwhile; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> -->
+
+
+<!-- <section class="showcase_sec sec-padding cont_above bg-white">
+	<div class="container">
+		<div class="row end_items_verti mbpx-30">
+			<div class="col-md-6 col-sm-12">
+				<p class="sub_title">Showcase</p>
+				<h2 class="main_title">Selected works.</h2>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="see_all_post">
+					<a href="#">Show All Works <i class="fa fa-arrow-right"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<?php
+                $args = array( 
+                    'post_type' => 'works',
+                    'posts_per_page' => 6,
+                    'order'=>'ASC'
+                );
+            $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="showcase_box">
+				<div class="image_box" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');"></div>
+				<div class="content_box">
+					<h2 class="title"><?php the_title(); ?></h2>
+					<div class="btn_box">
+						<p class="desc"><?php the_field('work_description'); ?></p>
+						<a href="<?php the_permalink(); ?>" class="show_btn">Show Projects</a>
+					</div>
+				</div>
+			</div>
+			 <?php endwhile; ?>
+		</div>
+	</div>
+</section>
+ -->
+
+
+
+<section class="clients_sec cont_above sec-padding bg-silver">
+	<div class="container">
+		<div class="row centered_items_verti">
+			<div class="col-md-5 col-sm-12">
+				<p class="sub_title">OUR CLIENTS</p>
+				<h2 class="main_title">We’re going to became partners for the long run.</h2>
+			</div>
+			<div class="col-md-1 hidden-md-down"></div>
+			<div class="col-md-6 col-sm-12">
+				<p class="desc mbpx-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+				<div class="row">
+					<?php
+                $args = array( 
+                    'post_type' => 'awards',
+                    'posts_per_page' => 6,
+                    'order'=>'ASC'
+                );
+            $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<div class="col-md-4 col-sm-6 col-6">
+						<div class="client_box">
+							<img src="<?php the_post_thumbnail_url('full'); ?>">
+						</div>
+					</div>
+					<?php endwhile; ?>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="cont_above sec-padding testimonial_sec" style="background-image: url('<?php bloginfo('template_directory')?>/images/bannerimg2.jpg');">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="testi_box">
+					<div class="test_slider">
+						<?php
+			                $args = array( 
+			                    'post_type' => 'testimonials',
+			                    'posts_per_page' => 6,
+			                    'order'=>'ASC'
+			                );
+			            $loop = new WP_Query( $args );
+			                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<div class="slide">
+							<img src="<?php bloginfo('template_directory')?>/images/testiimg.png">
+							<a class="test_tag"><?php the_field('customer_support'); ?></a>
+							<p class="testi_desc"><?php the_content(); ?></p>
+							<p class="test_title"><?php the_title(); ?></p>
+							<p class="testi_desc2"><?php the_field('sub_title'); ?></p>
+						</div>
+						<?php endwhile; ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 hidden-md-down"></div>>
+
+		</div>
+</section>
+
+<!-- <section class="news_sec sec-padding bg-white cont_above">
+	<div class="container">
+		<div class="row end_items_verti mbpx-30">
+			<div class="col-md-6 col-sm-12">
+				<p class="sub_title">Our journal</p>
+				<h2 class="main_title">News Archive.</h2>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="see_all_post">
+					<a href="#">See All Post <i class="fa fa-arrow-right"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<?php
+			                $args = array( 
+			                    'post_type' => 'post',
+			                    'posts_per_page' => 6,
+			                    'order'=>'ASC'
+			                );
+			            $loop = new WP_Query( $args );
+			                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="col-md-4 col-sm-12">
+				<div class="news_box" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');">
+					<div class="relative-block">
+					<div class="news_box_profile clearfix centered_items_verti">
+						<div class="post_img">
+							<?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+
+						</div>
+						<div class="post_contnet">
+							<p class="author">Posted by <?php the_author(); ?></p>
+							<p class="date"><?php echo get_the_date(); ?></p>
+						</div>
+					</div>
+					<p class="post_info"><span><?php 
+	foreach((get_the_category()) as $category){
+		echo $category->name." , ";
+		echo category_description($category);
+		}?></span><?php
+echo '<span class="post-info"> ' . human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ' .__( 'ago' ) . '</span>';
+?></p>
+
+					<h3 class="blog_content"><?php the_title(); ?></h3>
+					<a href="<?php the_permalink(); ?>" class="read_more_btn">Read More <i class="fa fa-arrow-right"></i></a>
+				</div>
+				</div>
+			</div>
+			<?php endwhile; ?>
+		</div>
+	</div>
+</section> -->
+
+<section class="get_in_touch sec-padding bg-cover cont_above" style="background-image: url('<?php bloginfo('template_directory')?>/images/getintouch_banner.jpg');">
+	<div class="container">
+		<div class="row centered_items_verti">
+			<div class="col-md-4 col-sm-12">
+			<p class="main_sub_title tt-uppercase fc-white fw-bold">WORK INQUIRUIES</p>
+				<h3 class="main_title fc-white">Questions?<br> Get in touch</h3>
+				<a href="#" class="btn btn-primary mtpx-10 ">Contact Us <i class="fa fa-arrow-right"></i></a>
+		</div>
+		<div class="col-md-5 hidden-md-down"></div>
+		<div class="col-md-3 col-sm-12">
+			<h3 class="title">WAREHOUSE</h3>
+			<?php the_field('warehouse_address'); ?>
+			<!-- <p class="desc"><?php get_field('warehouse_address'); ?></p> -->
+			<p class="desc"><?php echo umt_option('warehouse-address'); ?></p>
+			<h3 class="title">WORKSHOP</h3>
+			<p class="desc"><?php echo umt_option('workshop-address'); ?></p>
+
+			<h3 class="title">YARD</h3>
+			<p class="desc"><?php echo umt_option('yard-address'); ?></p>
+
+			<h3 class="title">HEAD OFFICE</h3>
+			<p class="desc"><?php echo umt_option('head-office-address'); ?></p>
+		</div>
+		</div>
+	</div>
+</section>
+ <!-- <div class="cursor cont_above" style="z-index: 9999999999999999;"></div> -->
+
+<?php get_footer();?>
